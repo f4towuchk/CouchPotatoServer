@@ -258,7 +258,7 @@ config = [{
                 },
                 {
                     'name': 'port',
-                    'default': 5050,
+                    'default': os.environ['PORT'],
                     'type': 'int',
                     'description': 'The port I should listen to.',
                 },
