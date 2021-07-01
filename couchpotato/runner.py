@@ -3,6 +3,7 @@ from uuid import uuid4
 import locale
 import logging
 import os.path
+import os
 import sys
 import time
 import traceback
@@ -263,7 +264,7 @@ def runCouchPotato(options, base_path, args, data_dir = None, log_dir = None, En
 
     config = {
         'use_reloader': reloader,
-        'port': tryInt(Env.setting('port', default = 5050)),
+        'port': tryInt(Env.setting('PORT', default = os.environ['PORT'])),
         'host': host if host and len(host) > 0 else '0.0.0.0',
         'host6': host6 if host6 and len(host6) > 0 else '::',
         'ssl_cert': Env.setting('ssl_cert', default = None),
